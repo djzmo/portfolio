@@ -10,16 +10,16 @@ export interface IInfoCard {
   logo: string;
   headings: {
     primary: string;
-    secondary: string;
-    tertiary: string;
+    secondary?: string;
+    tertiary?: string;
   };
-  description: string;
+  descriptionList: string[];
   isLast?: boolean;
 }
 
 const InfoCard: React.StatelessComponent<IProps> = props => {
   const {
-    cardDetails: { logo, headings, description, isLast }
+    cardDetails: { logo, headings, descriptionList, isLast }
   } = props;
 
   return (
@@ -29,10 +29,14 @@ const InfoCard: React.StatelessComponent<IProps> = props => {
       </div>
 
       <div className="details-container">
-        <h3>{headings.primary}</h3>
-        <h4>{headings.secondary}</h4>
-        <h5>{headings.tertiary}</h5>
-        <p>{description}</p>
+        <h3 dangerouslySetInnerHTML={{__html: headings.primary}} />
+        {headings.secondary && <h4>{headings.secondary}</h4>}
+        {headings.tertiary && <h5 dangerouslySetInnerHTML={{__html: headings.tertiary}} />}
+        <ul>
+          {descriptionList.map((description) => (
+              <li dangerouslySetInnerHTML={{__html: description}} />
+          ))}
+        </ul>
       </div>
     </div>
   );
