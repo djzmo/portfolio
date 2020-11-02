@@ -40,5 +40,6 @@ jspm_packages
 out/*
 build/
 src/
+.idea/
 
 .DS_Store
