@@ -9,6 +9,8 @@
     "type-check": "tsc"
   },
   "dependencies": {
+    "@iconify/icons-simple-icons": "^1.0.55",
+    "@iconify/react": "^1.1.3",
     "@zeit/next-sass": "^1.0.1",
     "@zeit/next-typescript": "^1.1.1",
     "moment": "^2.29.1",

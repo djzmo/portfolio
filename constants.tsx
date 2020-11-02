@@ -24,5 +24,14 @@ export enum SkillEnum {
   websockets,
   ionic,
   panelleum,
-  processing
+  processing,
+  puppeteer,
+  express,
+  nextjs,
+  laravel,
+  php,
+  bootstrap,
+  mysql,
+  digitalocean,
+  aws
 }
