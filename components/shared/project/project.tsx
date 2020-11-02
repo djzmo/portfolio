@@ -42,15 +42,12 @@ const Project: React.StatelessComponent<IProps> = props => {
       onClick={() => projectClick(id)}
       className="project-container"
     >
-      <div className="heading">
-        <div className="fa fa-circle red" />
-        <div className="fa fa-circle yellow" />
-        <div className="fa fa-circle green" />
-        <span>{name}</span>
-      </div>
       <div className="body">
         <div className="overlay">
-          <div className="description-container">{overview}</div>
+          <div className="description-container">
+            <h5>{name}</h5>
+            <p>{overview}</p>
+          </div>
         </div>
 
         <img

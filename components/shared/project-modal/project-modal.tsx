@@ -30,6 +30,7 @@ const renderButtons = (url: IUrl) => (
     {url.website && (
       <a href={url.website}
         className="link-button button-website"
+        target="_blank"
       >
         Website
         <i className="fa fa-link" />
@@ -88,7 +89,7 @@ class ProjectModal extends React.Component<IProps> {
             </div>
 
             <div className="content-container">
-              <p>{detailed}</p>
+              <div dangerouslySetInnerHTML={{__html: detailed}} />
 
               <div className="technologies-container">
                 {renderTechnologies(tagList)}
