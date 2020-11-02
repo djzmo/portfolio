@@ -4,13 +4,11 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  height: 100vh;
+  height: 30vh;
   justify-content: center;
   align-items: center;
 
-  background: url("/static/images/landing.jpg");
-  background-size: cover;
-  background-attachment: fixed;
+  background-color: rgb(94, 148, 241);
 
   .landing-overlay {
     position: absolute;
@@ -18,7 +16,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    height: 100vh;
+    height: 40vh;
     width: 100vw;
     z-index: 10;
     background-color: rgba(0, 0, 0, 0.6);
@@ -34,16 +32,18 @@
 
   .container-heading {
     .heading-name {
-      font-size: 6.25rem;
+      font-size: 6rem;
       margin-bottom: 1rem;
     }
 
     .heading-title {
-      font-size: 3.15rem;
+      font-size: 2rem;
+      margin-bottom: 1rem;
     }
 
     .heading-name,
-    .heading-title {
+    .heading-title,
+    .social-container {
       text-align: center;
       transition: opacity 1s ease-in-out, transform 1s ease-in-out;
     }
@@ -82,6 +82,27 @@
   .show {
     transform: translateY(0px);
     opacity: 1;
+  }
+
+  .social-container {
+    display: flex;
+    flex: 1;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-bottom: 2.25rem;
+
+    a {
+      margin: 0 1rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: #FFFFFF;
+    }
+
+    a i {
+      vertical-align: middle;
+      margin-right: 0.25rem;
+    }
   }
 }
 

@@ -23,6 +23,11 @@
     .icon {
       font-size: 4.25rem;
     }
+
+    .icon.inline {
+      vertical-align: middle;
+      margin: 0 1rem;
+    }
   }
 
   .name {

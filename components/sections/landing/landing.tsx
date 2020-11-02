@@ -1,6 +1,7 @@
 import * as React from "react";
 
 import "./landing.scss";
+import SocialIcon, {ISocialIcon} from "../../shared/social/social";
 
 interface IAnimated {
   currentClass: string;
@@ -11,11 +12,12 @@ interface IAnimated {
 interface IState {
   name?: IAnimated;
   title?: IAnimated;
-  findOutMore?: IAnimated;
+  social?: IAnimated;
 }
 
 interface IProps {
   userDetails: IUserDetails;
+  socialIconList: ISocialIcon[];
 }
 
 export interface IUserDetails {
@@ -31,7 +33,7 @@ class Landing extends React.Component<IProps, IState> {
     this.state = {
       name: { currentClass: "hide-down", animationClass: "show", delay: 150 },
       title: { currentClass: "hide-down", animationClass: "show", delay: 450 },
-      findOutMore: { currentClass: "hide-down", animationClass: "show", delay: 600 }
+      social: { currentClass: "hide-down", animationClass: "show", delay: 600 }
     };
   }
 
@@ -44,13 +46,11 @@ class Landing extends React.Component<IProps, IState> {
   }
 
   public render() {
-    const { userDetails } = this.props;
-    const  { name, title, findOutMore } = this.state;
+    const { userDetails, socialIconList } = this.props;
+    const  { name, title, social } = this.state;
 
     return (
       <section className="landing-container">
-        <div className="landing-overlay" />
-
         <div className="container container-heading">
           <h1
             className={`heading-name ${name && name.currentClass}`}
@@ -62,11 +62,12 @@ class Landing extends React.Component<IProps, IState> {
           >
             {userDetails.title}
           </h2>
-        </div>
 
-        <div className={`container container-footer ${findOutMore && findOutMore.currentClass}`}>
-          <span className="find-out">Find out more about {userDetails.firstName}</span>
-          <i className="fa fa-chevron-down" />
+          <div className={`social-container ${social && social.currentClass}`}>
+            {socialIconList.map((social, i) => (
+                <SocialIcon key={i} social={social} inline={true} />
+            ))}
+          </div>
         </div>
       </section>
     );
