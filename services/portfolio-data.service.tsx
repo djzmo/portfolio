@@ -184,4 +184,6 @@ export default class PortfolioDataService {
       icon: "fa-facebook"
     }
   ];
+
+  public static readonly copyrightText: string = `Copyright © ${moment().year()} Yana`;
 }
