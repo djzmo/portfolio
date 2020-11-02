@@ -15,14 +15,14 @@ class App extends React.Component {
   public render() {
     return (
       <div className="app-container">
-        <Landing userDetails={PortfolioDataService.userDetails} />
+        <Landing userDetails={PortfolioDataService.userDetails} socialIconList={PortfolioDataService.socialIconList} />
         <About aboutTextList={PortfolioDataService.aboutTextList} />
         <Experience experienceList={PortfolioDataService.experienceList} />
         <Education educationList={PortfolioDataService.educationList} />
         <Projects projectList={PortfolioDataService.projectList} />
         <Skills skillList={PortfolioDataService.skillList} />
         <Contact socialIconList={PortfolioDataService.socialIconList} />
-        <Footer />
+        <Footer copyrightText={PortfolioDataService.copyrightText} />
       </div>
     );
   }
