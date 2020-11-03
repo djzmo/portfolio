@@ -4,7 +4,16 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
 
   max-width: $size-medium;
+
+  .category-column {
+    margin: 0 1rem;
+
+    ul {
+      padding-left: 1.5rem;
+      margin: 0.5rem 0;
+    }
+  }
 }
