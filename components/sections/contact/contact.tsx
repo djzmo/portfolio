@@ -7,20 +7,23 @@ interface IProps {
   socialIconList: ISocialIcon[];
 }
 
-const Contact: React.StatelessComponent<IProps> = ({socialIconList}) => {
-  return (
-    <section className="section section-theme">
-      <h2>Get in touch</h2>
+class Contact extends React.Component<IProps, {}> {
+  render() {
+    const {socialIconList} = this.props;
+    return (
+      <section className="section section-theme">
+        <h2>Get In Touch</h2>
 
-      <div className="contact-container">
-        <div className="social-container">
-          {socialIconList.map((social, i) => (
-            <SocialIcon key={i} social={social} />
-          ))}
+        <div className="contact-container">
+          <div className="social-container">
+            {socialIconList.map((social, i) => (
+                <SocialIcon key={i} social={social} />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
-  );
-};
+      </section>
+    );
+  }
+}
 
 export default Contact;
