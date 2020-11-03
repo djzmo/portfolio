@@ -22,14 +22,24 @@ const SocialIcon: React.StatelessComponent<IProps> = props => {
   const renderDefault = () => {
       return <a href={url} className={`social-item-container ${id}`}>
           <div className="icon-container">
-              <i className={`icon fab ${icon}`} />
+              <i className={`icon ${icon}`} />
           </div>
           <span className="name">{name}</span>
       </a>;
   };
 
+  const renderUrl = (url) => {
+      if (url.startsWith('https://')) {
+          return url.substring(8);
+      } else if (url.startsWith('http://') || url.startsWith('mailto:')) {
+          return url.substring(7);
+      }
+
+      return url;
+  };
+
   const renderInline = () => {
-      return <a href={url}><i className={`icon inline fab ${icon}`} /> {url.substring(8)}</a>
+      return <a className="inline" href={url}><i className={`icon inline fab ${icon}`} /> {renderUrl(url)}</a>
   };
 
   return inline ? renderInline() : renderDefault()
