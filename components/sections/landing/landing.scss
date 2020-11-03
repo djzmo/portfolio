@@ -120,12 +120,15 @@
       padding: 0.5rem;
       font-size: 1em;
       cursor: pointer;
+      height: 35px;
     }
   }
 }
 
 @media only screen and (max-width: $size-small) {
   .landing-container {
+    height: 50vh;
+
     .container-heading {
       .heading-name {
         font-size: 3.5rem;
