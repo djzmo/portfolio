@@ -18,11 +18,13 @@ interface IState {
 interface IProps {
   userDetails: IUserDetails;
   socialIconList: ISocialIcon[];
+  resumeUrl: string;
 }
 
 export interface IUserDetails {
   firstName: string;
   lastName: string;
+  nickname: string;
   title: string;
 }
 
@@ -46,7 +48,7 @@ class Landing extends React.Component<IProps, IState> {
   }
 
   public render() {
-    const { userDetails, socialIconList } = this.props;
+    const { userDetails, socialIconList, resumeUrl } = this.props;
     const  { name, title, social } = this.state;
 
     return (
@@ -67,6 +69,10 @@ class Landing extends React.Component<IProps, IState> {
             {socialIconList.map((social, i) => (
                 <SocialIcon key={i} social={social} inline={true} />
             ))}
+          </div>
+
+          <div className="resume-container">
+            <button onClick={() => window.open(resumeUrl, "_blank")}>View Resume <i className="fa fas fa-external-link-alt"/></button>
           </div>
         </div>
       </section>
