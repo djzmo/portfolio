@@ -1,8 +1,10 @@
 import * as React from "react";
 
 import "./projects.scss";
+
 import Project, { IProject } from "../../shared/project/project";
 import ProjectModal from "../../shared/project-modal/project-modal";
+import Repository, {IRepository} from "../../shared/repository/repository";
 
 interface IState {
   selectedProject?: IProject;
@@ -10,6 +12,7 @@ interface IState {
 
 interface IProps {
   projectList: IProject[];
+  repositoryList: IRepository[];
 }
 
 class Projects extends React.Component<IProps, IState> {
@@ -30,12 +33,12 @@ class Projects extends React.Component<IProps, IState> {
   };
 
   public render() {
-    const { projectList } = this.props;
+    const { projectList, repositoryList } = this.props;
     const { selectedProject } = this.state;
 
     return (
       <section className="section section-secondary">
-        <h2>Projects</h2>
+        <h2>Software Projects</h2>
 
         <div className="projects-container">
           {projectList.map(project => (
@@ -44,6 +47,11 @@ class Projects extends React.Component<IProps, IState> {
               projectDetails={project}
               projectClick={this.handleProjectClick}
             />
+          ))}
+
+          {repositoryList.map(repository => (
+            <Repository key={repository.name}
+                        repositoryDetails={repository} />
           ))}
         </div>
 

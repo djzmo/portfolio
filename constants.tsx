@@ -33,5 +33,7 @@ export enum SkillEnum {
   bootstrap,
   mysql,
   digitalocean,
-  aws
+  aws,
+  ruby,
+  cpp
 }

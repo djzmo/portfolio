@@ -1,0 +1,100 @@
+@import "../../variables.scss";
+
+.repository-container {
+  width: 47.5%;
+  margin-bottom: 2rem;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: $content-shadow;
+
+  a.repository-card {
+    display: block;
+    text-decoration: none;
+  }
+
+  .description-container {
+    padding: 1rem;
+  }
+
+  .heading {
+    font-size: 1rem;
+    background-color: #ddd;
+    padding: 0.25rem 0 0.25rem 0.25rem;
+
+    .fa-circle {
+      padding-right: 0.5rem;
+
+      &.red {
+        color: red;
+      }
+
+      &.yellow {
+        color: yellow;
+      }
+
+      &.green {
+        color: green;
+      }
+    }
+  }
+
+  .body {
+    background-color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    .project-image {
+      transition: 0.3s transform ease-in-out;
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .description-container {
+      color: $font-color;
+
+      .repository-tags-container {
+        font-size: 0.8em;
+
+        span {
+          background-color: #EEEEEE;
+          display: inline-block;
+          padding: 0.25rem;
+          border-radius: 10px;
+          margin-right: 0.5rem;
+        }
+      }
+    }
+
+    h5 {
+      font-size: 1.25em;
+      color: $theme-color;
+
+      svg {
+        vertical-align: middle;
+        font-size: 0.8em;
+        margin-right: 0.5rem;
+        color: $font-color;
+      }
+    }
+
+    p {
+      font-size: 0.9em;
+    }
+
+    &:hover {
+      .project-image {
+        transform: scale(1.1);
+      }
+
+      .overlay {
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $size-small) {
+  .repository-container {
+      width: 100%;
+  }
+}

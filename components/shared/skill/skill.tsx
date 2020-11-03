@@ -3,6 +3,8 @@ import {Icon} from "@iconify/react";
 import googleChromeIcon from "@iconify/icons-simple-icons/googlechrome";
 import nextDotJsIcon from "@iconify/icons-simple-icons/next-dot-js";
 import digitalOceanIcon from "@iconify/icons-simple-icons/digitalocean";
+import amazonAwsIcon from "@iconify/icons-simple-icons/amazonaws";
+import cplusplusIcon from "@iconify/icons-simple-icons/cplusplus";
 
 import "./skill.scss";
 import { SkillEnum } from "../../../constants";
@@ -56,6 +58,9 @@ export const skillMap: Map<SkillEnum, ISkill>  = new Map<SkillEnum, ISkill> ([
   [SkillEnum.express, { name: "Express", icon: "express", iconVariant: "original" }],
   [SkillEnum.mysql, { name: "MySQL", icon: "mysql"}],
   [SkillEnum.digitalocean, { name: "DigitalOcean", icon: "", iconElement: <Icon className="icon" icon={digitalOceanIcon} />, showAsDefault: false }],
+  [SkillEnum.ruby, { name: "Ruby", icon: "ruby", showAsDefault: false }],
+  [SkillEnum.aws, { name: "AWS", icon: "", iconElement: <Icon className="icon" icon={amazonAwsIcon} />, showAsDefault: false }],
+  [SkillEnum.cpp, { name: "C++", icon: "", iconElement: <Icon className="icon" icon={cplusplusIcon} />, showAsDefault: false }],
 ]);
 
 const Skill: React.StatelessComponent<IProps> = props => {
