@@ -282,7 +282,7 @@ export default class PortfolioDataService {
     {
       id: "ln",
       name: "LinkedIn",
-      url: "https://linkedin.com/in/djzmo",
+      url: "https://linkedin.com/in/yanadwi",
       icon: "fab fa-linkedin"
     },
     {
